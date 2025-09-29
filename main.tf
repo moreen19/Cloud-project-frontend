@@ -37,6 +37,7 @@ resource "aws_s3_bucket_policy" "frontend_policy" {
             }
         }
     ]
+    
 }
   
   )
@@ -53,7 +54,7 @@ resource "aws_s3_object" "resume_html" {
   bucket = aws_s3_bucket.frontend_bucket.id
   key    = "index.html"
   source = "index.html"
-  etag   = filemd5("index..html")
+  etag   = filemd5("index.html")
   content_type = "text/html"
   lifecycle {
     prevent_destroy = true

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Moreen Andrason - Resume</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Moreen Andrason</h1>
+    <p>Solutions Architect | Battle Creek, MI | 
+      <a href="mailto:your.email@example.com">moreenandy3@gmail.com</a> | 
+      <a href="https://github.com/moreen19" target="_blank">GitHub</a>
+    </p>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p> Cloud solutions architect with data science background seeking a new opportunity</p>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <ul>
+      <li>Grand Valley State University – MS in Data Science and Analytics</li>
+      <li>Kenyatta University – Bachelor in Finance</li>
+    </ul>
+  </section>
+
+  <section id="certifications">
+    <h2>Certifications</h2>
+    <ul>
+      <li>AWS Certified Solutions Architect – Professional</li>
+      <li>AWS Certified Solutions Architect – Associate</li>
+    </ul>
+  </section>
+  
+  <section id="projects">
+  <h2>
+    <button onclick="toggleProjectMenu()" style="font-size:1.2em; cursor:pointer;">Cloud Resume Challenge Project ▼</button>
+  </h2>
+  
+   </section>
+
+   <section id="about-project">
+  <h3>About Project</h3>
+   <ul>
+    <li>This project was inspired by the famous cloud resume challenge.The challenge aids in provivding hands on skills that are relevant in the real world <strong>Request for Proposal (RFP)</strong> for a cloud-native resume hosting platform.</li>
+    <li>Designed to be <strong>secure, scalable, and globally accessible</strong> using AWS services and infrastructure as code.</li>
+    <li>Demonstrates full-stack cloud architecture skills including frontend hosting, backend API integration, CI/CD automation, and security hardening.</li>
+    <li>Aligned with the <strong>AWS Well-Architected Framework</strong> to ensure operational excellence and reliability.</li>
+   </ul>
+  </section>
+
+  <section id="technologies-used">
+   <h3>RFP Simulation</h3>
+   <ul>
+    <li><strong>Client Name:</strong> CloudHire Solutions</li>
+    <li><strong>Project Title:</strong> Cloud-Native Resume Hosting Platform</li>
+    <li><strong>Objectives:</strong>
+      <ul>
+        <li>Host resume website entirely on AWS using serverless and managed services</li>
+        <li>Ensure global availability with HTTPS and low latency</li>
+        <li>Custom domain name with route 53 DNS</li>
+        <li>Track visitor count via backend API and store in a database</li>
+        <li>Manage infrastructure with Terraform</li>
+        <li>Automate deployments using GitHub Actions</li>
+        <li>Secure backend resources from public exposure</li>
+      </ul>
+    </li>
+    <li><strong>Deliverables:</strong>
+       <ul>
+        <li>Static website hosted on S3 and served via CloudFront</li>
+        <li>Custom domain name with route 53 DNS</li>
+        <li>Lambda + API Gateway backend with DynamoDB integration</li>
+        <li>Terraform codebase for infrastructure</li>
+        <li>CI/CD workflows via GitHub Actions</li>
+        <li>Documentation and architecture diagram</li>
+       </ul>
+      </li>
+    </ul>
+   </section>
+
+   <section id="architecture">
+  <h3>Architecture & AWS Services Used</h3>
+  <img src="aws cloud resume challenge chart.png" alt="Cloud Resume Architecture Diagram" style="max-width:100%; height:auto; margin-bottom:15px;">
+  <ul>
+    <li><strong>Amazon S3:</strong> Hosts the static HTML/CSS resume website</li>
+    <li><strong>Amazon CloudFront:</strong> Distributes content globally with HTTPS and caching</li>
+    <li><strong>Origin Access Control (OAC):</strong> Restricts S3 access to CloudFront only</li>
+    <li>Custom domain name with route 53 DNS</li>
+    <li><strong>AWS Lambda:</strong> Handles backend logic for visitor tracking</li>
+    <li><strong>Amazon API Gateway:</strong> Exposes the Lambda function securely as a HTTP API</li>
+    <li><strong>Amazon DynamoDB:</strong> Stores visitor count data in a scalable NoSQL table</li>
+    <li><strong>AWS IAM:</strong> Manages least-privilege access for Lambda and API Gateway</li>
+    <li><strong>Terraform:</strong> Defines and manages all infrastructure as code</li>
+    <li><strong>GitHub Actions:</strong> Automates deployment of both frontend and backend</li>
+  </ul>
+</section>
+
+<section id="work-done">
+  <h3>Brief Explanation of Work Done</h3>
+  <ul>
+    <li>Created a static HTML/CSS resume and hosted it on an S3 bucket</li>
+    <li>Configured CloudFront with OAC to serve the site securely and globally</li>
+    <li>Built a Lambda function to increment and retrieve visitor count</li>
+    <li>Connected Lambda to API Gateway and stored data in DynamoDB</li>
+    <li>Wrote Terraform modules to define and import existing AWS resources</li>
+    <li>Set up GitHub Actions workflows to automate deployment on code push</li>
+    <li>Hardened security by disabling public access to S3 and using IAM roles</li>
+    <li>Hardened security by use of CORS for the API</li>
+    <li>Validated the architecture against AWS best practices</li>
+  </ul>
+</section>
+
+<section id="challenges">
+  <h3>Challenges</h3>
+  <ul>
+    <li>Unable to register a custom domain due to AWS policy on new aws accounts</li>
+    <li>Debugging and correcting CORS errors when linking backend to front end</li>
+    <li>Getting the website visitor counter on the front working correctingly</li>
+    <li>Importing manually created AWS resources into Terraform without triggering destructive changes</li>
+    <li>Managing Terraform lifecycle rules like <strong>prevent_destroy</strong> to protect critical resources</li>
+    <li>Debugging GitHub Actions workflows and ensuring environment consistency</li>
+    <li>Ensuring idempotency and avoiding drift between Terraform state and AWS console</li>
+    <li>Balancing simplicity and cost with scalability and security in a personal project</li>
+  </ul>
+</section>
+
+<section id="business-value">
+  <h3>Business Value</h3>
+  <ul>
+    <li>Demonstrates ability to design and deploy secure, scalable cloud-native applications</li>
+    <li>Reduces operational overhead through serverless architecture and automation</li>
+    <li>Aligns with DevOps principles by integrating CI/CD and infrastructure as code</li>
+    <li>Enhances global availability and performance using CloudFront</li>
+    <li>Provides a real-world example of applying the AWS Well-Architected Framework</li>
+    <li>Serves as a reusable template for future client-facing static sites or microsites</li>
+    <li>Builds trust with stakeholders by showing attention to security and maintainability</li>
+  </ul>
+</section>
+
+<section id="improvements">
+  <h3>Possible Improvements</h3>
+  <ul>
+    <li>Integrate a custom domain via Route 53 and ACM for branded HTTPS access</li>
+    <li>Add CloudFront cache invalidation on frontend deploys for faster updates</li>
+    <li>Implement CloudWatch monitoring and alerts for backend Lambda/API usage</li>
+    <li>Add frontend analytics using Amazon Pinpoint or Google Analytics</li>
+    <li>Set up backend and front end to store current state inorder to allow for automated deployment that is in sync with existing state of resources</li>
+    <li>Add unit tests and Terraform validation steps to CI/CD workflows</li>
+  </ul>
+</section>
+
+
+  <section id="visitor-section">
+    <p>👁️ Total Visitors: <span id="visitor-count">Loading...</span></p>
+  </section>
+
+  <footer>
+    <p>Contact: <a href="mailto:you@example.com">moreenandy3@gmail.com</a></p>
+  </footer>
+
+  <script>
+    const counterElement = document.getElementById('visitor-count');
+    const apiUrl = 'https://4szhrfmjee.execute-api.us-east-1.amazonaws.com/visitors';
+    async function updateVisitorCount() {
+       try {
+         await fetch(apiUrl, {
+           method: 'POST',
+           headers: {
+             'Content-Type': 'application/json'
+           }
+         });
+
+         await new Promise(resolve => setTimeout(resolve, 500)); // Optional delay
+
+         const response = await fetch(apiUrl);
+         const data = await response.json();
+         console.log('Visitor count response:', data);
+
+         if (data && typeof data.visitorCount === 'number') {
+           counterElement.innerText = data.visitorCount;
+         } else {
+           counterElement.innerText = 'an unknown number of';
+         }
+       } catch (error) {
+         console.error('Error fetching visitor count:', error);
+         counterElement.innerText = 'an unknown number of';
+       }
+    }
+
+    updateVisitorCount();
+
+
+  </script>
+
+  <script>
+  function toggleProjectMenu() {
+    const menu = document.getElementById("projectMenu");
+    menu.style.display = menu.style.display === "none" ? "block" : "none";
+  }
+  </script>
+
+
+</body>
+</html>
