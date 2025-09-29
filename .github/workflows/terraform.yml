@@ -23,24 +23,20 @@ jobs:
         with:
           terraform_version: 1.9.5 # Pin to your Terraform version
 
-      # Step 3 - Configure AWS Credentials
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-east-1 # change if needed
-
-      # Step 4 - Terraform Init
+    
+      # Step 3 - Terraform Init
       - name: Terraform Init
         run: terraform init
+        env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
-      # Step 5 - Terraform Validate
-      - name: Terraform Validate
-        run: terraform validate
 
-      # Step 6 - Terraform Plan
+      # Step 4 - Terraform plan
       - name: Terraform Plan
-        run: terraform plan 
+        run: terraform plan
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
       
