@@ -24,7 +24,7 @@ jobs:
           terraform_version: 1.9.5 # Pin to your Terraform version
 
     
-      # Step 3 - Terraform Init
+      # Step 3 - Terraform Init.
       - name: Terraform Init
         run: terraform init
         env:
